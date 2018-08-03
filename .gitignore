@@ -1,0 +1,10 @@
+*/xcuserdata/*
+Metal/Bench.xcodeproj/xcuserdata/
+bench
+.DS_Store
+*.xcuserstate
+*.so
+*.dSYM
+scripts/clang-with-compilation-db
+compile_commands.json
+DerivedData
