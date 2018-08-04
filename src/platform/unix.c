@@ -4,8 +4,6 @@
 #include "common.h"
 #include "maths.h"
 #include "renderer.c"
-#define BENCH_IMPL
-#include "bench.h"
 #include "core.c"
 #include "glad.c"
 #include "opengl.c"
