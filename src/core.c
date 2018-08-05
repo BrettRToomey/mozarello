@@ -71,6 +71,21 @@ struct Memory {
     void *scratch;
 };
 
+enum Label {
+    Label_Green,
+    Label_Yellow,
+    Label_Orange,
+    Label_Red,
+    Label_Purple,
+    Label_Blue,
+    Label_Sky,
+    Label_Lime,
+    Label_Pink,
+    Label_Black,
+
+    _LABEL_COUNT
+};
+
 INLINE b32 KeyPressed(struct Input *input, enum Key key) {
     return input->keys[key];
 }
@@ -116,7 +131,6 @@ void DrawTray(
 
     f32 yOffset = cardsStartY;
     for (size_t i = 0; i < 5; i += 1) {
-        v2 pos = V2(cardsStartX, cardsStartY + (i * inset));
         PushRect(commands, V2(cardsStartX-1, yOffset-1), V2(cardWidth+2, 102), QuadKind_Normal, shadowColor);
         PushRect(commands, V2(cardsStartX, yOffset), V2(cardWidth, 100), QuadKind_Normal, cardColor);
         DrawText(commands, V2(cardsStartX + 4, yOffset+12), textColor, textFont, cardNames[i]);
@@ -154,7 +168,7 @@ void tickBoards(
 
     f32 halfWidth = commands->settings.width/2.0;
     f32 halfHeight = commands->settings.height/2.0;
-    DrawSpinner(commands, halfWidth, halfHeight, 25.0, (f32)time->global);
+    DrawSpinner(commands, halfWidth, halfHeight, 16.0, (f32)time->global);
 }
 
 void tickBoard(
